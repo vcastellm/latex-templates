@@ -1,0 +1,95 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[12pt]{article}
+\usepackage{fontspec}
+
+% Esto es para poder escribir acentos directamente:
+\usepackage[latin1]{inputenc}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% Esto es para que el LaTeX sepa que el texto está en español:
+\usepackage[spanish]{babel}
+\usepackage[dvipdfm, colorlinks, breaklinks, pdftitle={Title}, pdfauthor={Castell, Victor}]{hyperref}
+
+% DOCUMENT LAYOUT
+\usepackage[a4paper, margin=2cm]{geometry} % Set all margins to 2cm
+%\usepackage[cm]{fullpage}
+\usepackage{layout}
+\setlength\parindent{0pt} % No indent pargraphs
+
+\usepackage{fancyhdr}                    % Running Headers and footers
+\usepackage{graphicx}                    % Images loaded externally
+
+% Paquetes de la AMS:
+\usepackage{amsmath, amsthm, amsfonts}
+
+% Teoremas
+%--------------------------------------------------------------------------
+\newtheorem{thm}{Teorema}[section]
+\newtheorem{cor}[thm]{Corolario}
+\newtheorem{lem}[thm]{Lema}
+\newtheorem{prop}[thm]{Proposición}
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definición}
+\theoremstyle{remark}
+\newtheorem{rem}[thm]{Observación}
+
+% Atajos.
+% Se pueden definir comandos nuevos para acortar cosas que se usan
+% frecuentemente. Como ejemplo, aquí se definen la R y la Z dobles que
+% suelen representar a los conjuntos de números reales y enteros.
+%--------------------------------------------------------------------------
+
+\def\RR{\mathbb{R}}
+\def\ZZ{\mathbb{Z}}
+
+% De la misma forma se pueden definir comandos con argumentos. Por
+% ejemplo, aquí definimos un comando para escribir el valor absoluto
+% de algo más fácilmente.
+%--------------------------------------------------------------------------
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+
+% Operadores.
+% Los operadores nuevos deben definirse como tales para que aparezcan
+% correctamente. Como ejemplo definimos en jacobiano:
+%--------------------------------------------------------------------------
+\DeclareMathOperator{\Jac}{Jac}
+
+%--------------------------------------------------------------------------
+\title{Title}
+\author{Victor Castell}
+
+\begin{document}
+\maketitle
+
+\abstract{Esto es una plantilla simple para un artículo en \LaTeX.}
+
+\section{Primera sección}
+
+Aquí va el texto.
+\begin{equation}\label{eq:area}
+  S = \pi r^2
+\end{equation}
+Uno puede referirse a ecuaciones así: ver ecuación (\ref{eq:area}).
+También se pueden mencionar secciones de la misma forma: ver sección
+\ref{sec:nada}. O citar algo de la bibliografía: \cite{Cd94}.
+
+\subsection{Subsection}\label{sec:nada}
+
+Más texto.
+
+\subsubsection{Subsubsection}\label{sec:nada2}
+
+Más texto.
+
+% Bibliografía.
+%-----------------------------------------------------------------
+\begin{thebibliography}{99}
+
+\bibitem{Cd94} Autor, \emph{Título}, Revista/Editor, (año)
+
+\end{thebibliography}
+
+\end{document}
